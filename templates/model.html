@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Run PV Model Chain</title>
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            width: 400px; /* Adjust width as needed */
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"], input[type="number"], select {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Run PV Model Chain</h1>
+
+    <form method="POST" enctype="multipart/form-data">
+        {{ form.hidden_tag() }}
+        
+        <div class="form-group">
+            {{ form.datafile.label }}
+            {{ form.datafile() }}
+        </div>
+
+        <div class="form-group">
+            {{ form.latitude.label }}
+            {{ form.latitude() }}
+        </div>
+
+        <div class="form-group">
+            {{ form.longitude.label }}
+            {{ form.longitude() }}
+        </div>
+
+        <div class="form-group">
+            {{ form.tz.label }}
+            {{ form.tz() }}
+        </div>
+
+        <div class="form-group">
+            {{ form.altitude.label }}
+            {{ form.altitude() }}
+        </div>
+
+        <div class="form-group">
+            {{ form.module_database.label }}
+            {{ form.module_database() }}
+        </div>
+
+        <div class="form-group">
+            {{ form.module.label }}
+            {{ form.module() }}
+        </div>
+
+        <div class="form-group">
+            {{ form.inverter_database.label }}
+            {{ form.inverter_database() }}
+        </div>
+
+        <div class="form-group">
+            {{ form.inverter.label }}
+            {{ form.inverter() }}
+        </div>
+
+        <div class="form-group">
+            {{ form.temp_model.label }}
+            {{ form.temp_model() }}
+        </div>
+
+        <div class="form-group">
+            {{ form.modules_per_string.label }}
+            {{ form.modules_per_string() }}
+        </div>
+
+        <div class="form-group">
+            {{ form.strings_per_inverter.label }}
+            {{ form.strings_per_inverter() }}
+        </div>
+
+        <div class="form-group">
+            {{ form.surface_tilt.label }}
+            {{ form.surface_tilt() }}
+        </div>
+
+        <div class="form-group">
+            {{ form.surface_azimuth.label }}
+            {{ form.surface_azimuth() }}
+        </div>
+
+        <div class="form-group">
+            {{ form.location_name.label }}
+            {{ form.location_name() }}
+        </div>
+
+        {{ form.submit() }}
+    </form>
+    
+    <a href="/">Back to Home</a>
+</body>
+</html>
+

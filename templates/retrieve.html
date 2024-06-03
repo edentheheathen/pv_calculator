@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Retrieve PVGIS Data</title>
+    <style>
+        /* Same styles as in index.html for consistency */
+        body {
+            font-family: sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            width: 400px; /* Adjust width as needed */
+            margin: 0 auto; /* Center the form */
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"], input[type="number"], select {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 100%;
+        }
+
+        a {
+            display: inline-block;
+            padding: 15px 30px;
+            margin: 20px;
+            background-color: #007bff; /* Blue background */
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+    </style>
+</head>
+<body>
+    <h1>Retrieve PVGIS Data</h1>
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        <div class="form-group">
+            {{ form.latitude.label }} 
+            {{ form.latitude() }}
+        </div>
+        <div class="form-group">
+            {{ form.longitude.label }} 
+            {{ form.longitude() }}
+        </div>
+        <div class="form-group">
+            {{ form.year.label }} 
+            {{ form.year() }}
+        </div>
+        <div class="form-group">
+            {{ form.output.label }}
+            {{ form.output() }}
+        </div>
+        {{ form.submit() }}
+    </form>
+    <a href="/">Back to Home</a>
+</body>
+</html>
